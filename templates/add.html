@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Destination Highlight</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-4">Add Destination Highlight</h1>
+        <form method="POST">
+            <div class="mb-3">
+                <label for="destination" class="form-label">Destination</label>
+                <input type="text" class="form-control" id="destination" name="destination" required>
+            </div>
+            <div class="mb-3">
+                <label for="best_time_to_visit" class="form-label">Best Time to Visit</label>
+                <input type="text" class="form-control" id="best_time_to_visit" name="best_time_to_visit" required>
+            </div>
+            <div class="mb-3">
+                <label for="average_temperature" class="form-label">Average Temperature</label>
+                <input type="text" class="form-control" id="average_temperature" name="avg_temperature" required>
+            </div>
+            <div class="mb-3">
+                <label for="must_visit_attractions" class="form-label">Must-Visit Attractions (Use comma to separate values)</label>
+                <textarea class="form-control" id="must_visit_attractions" name="must_visit_attractions" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="avg_daily_budget" class="form-label">Avg. Daily Budget</label>
+                <input type="text" class="form-control" id="avg_daily_budget" name="avg_daily_budget" required>
+            </div>
+            <button type="submit" class="btn btn-success">Save</button>
+            <a href="/admin" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</body>
+</html>
