@@ -48,7 +48,6 @@ def add():
 
     return render_template('add.html')
 
-# Route to edit an existing destination highlight
 @app.route('/admin/edit/<int:id>', methods=['GET', 'POST'])
 def edit(id):
     if request.method == 'POST':

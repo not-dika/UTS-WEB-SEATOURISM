@@ -33,10 +33,10 @@
                         <a class="nav-link" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#destinations-stats">Destinations</a>
+                        <a class="nav-link" href="#destination-stats">Destinations</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
+                        <a class="nav-link" href="#booking">Bookings</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/admin">Admin</a>
@@ -47,7 +47,7 @@
     </nav>
 
     <!-- Hero Section -->
-<section id="home" class="hero-section text-white text-center" style="background-image: url('{{ url_for('static', filename='img/hero-bg.jpg') }}');">
+<section id="home" class="hero-section text-white text-center mt-5" style="background-image: url('{{ url_for('static', filename='img/hero-bg.jpg') }}');">
     <div class="container">
         <div class="hero-content">
             <h1 class="display-4 mb-4">Discover Southeast Asia</h1>
@@ -108,9 +108,9 @@
                     <tbody>
                         {% for destination in destinations %}
                         <tr>
-                            <td>{{ destination['destination'] }}</td>  <!-- destination -->
-                            <td>{{ destination['best_time_to_visit'] }}</td>  <!-- best_time_to_visit -->
-                            <td>{{ destination['avg_temperature'] }}</td>  <!-- avg_temperature -->
+                            <td>{{ destination['destination'] }}</td>
+                            <td>{{ destination['best_time_to_visit'] }}</td>
+                            <td>{{ destination['avg_temperature'] }}</td>
                             <td>
                                 <ul class="list-unstyled">
                                     {% for attraction in destination['must_visit_attractions'].split(',') %}
@@ -118,7 +118,7 @@
                                     {% endfor %}
                                 </ul>
                             </td>
-                            <td>{{ destination['avg_daily_budget'] }}</td>  <!-- avg_daily_budget -->
+                            <td>{{ destination['avg_daily_budget'] }}</td>
                         </tr>
                         {% endfor %}
                     </tbody>
@@ -181,7 +181,7 @@
     <!-- Footer -->
     <footer class="bg-light text-center py-4">
         <div class="container">
-            <p class="mb-0">© 2023 Southeast Asia Travel Explorer. All rights reserved.</p>
+            <p class="mb-0">© 2023 Southeast Asia Travel. All rights reserved.</p>
         </div>
     </footer>
 

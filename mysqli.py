@@ -10,7 +10,6 @@ class MySQLInterface:
         self.connection = None
 
     def _connect(self):
-        """Establish a connection to the MySQL database."""
         if self.connection is None:
             try:
                 self.connection = pymysql.connect(
@@ -26,15 +25,13 @@ class MySQLInterface:
                 self.connection = None
 
     def _disconnect(self):
-        """Close the connection to the MySQL database."""
         if self.connection:
             self.connection.close()
             self.connection = None
             print("Connection closed")
 
     def execute_query(self, query, params=None):
-        """Execute a single query."""
-        self._connect()  # Ensure connection is established
+        self._connect()
         try:
             with self.connection.cursor() as cursor:
                 cursor.execute(query, params)
@@ -43,11 +40,10 @@ class MySQLInterface:
         except MySQLError as e:
             print(f"Error: {e}")
         finally:
-            self._disconnect()  # Close the connection after executing the query
+            self._disconnect()
 
     def fetch_all(self, query, params=None):
-        """Fetch all results from a query."""
-        self._connect()  # Ensure connection is established
+        self._connect()
         try:
             with self.connection.cursor() as cursor:
                 cursor.execute(query, params)
@@ -57,11 +53,10 @@ class MySQLInterface:
             print(f"Error: {e}")
             return None
         finally:
-            self._disconnect()  # Close the connection after fetching results
+            self._disconnect()
 
     def fetch_one(self, query, params=None):
-        """Fetch a single result from a query."""
-        self._connect()  # Ensure connection is established
+        self._connect()
         try:
             with self.connection.cursor() as cursor:
                 cursor.execute(query, params)
@@ -71,4 +66,4 @@ class MySQLInterface:
             print(f"Error: {e}")
             return None
         finally:
-            self._disconnect()  # Close the connection after fetching results
+            self._disconnect()
